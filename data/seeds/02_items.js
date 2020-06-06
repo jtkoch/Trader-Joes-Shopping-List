@@ -273,7 +273,7 @@ exports.seed = async function(knex) {
     {
       name: "Simpler Times Pilsner Cans 6 Pack",
       price: "$3.99",
-      category: "Beer"
+      category: "Beverages"
     },
     {
       name: "Oat Beverage Original",
@@ -306,7 +306,7 @@ exports.seed = async function(knex) {
       category: "Frozen"
     },
     {
-      name: "Vanilla Flavor",
+      name: "Vanilla Flavored Extract",
       price: "$8.99",
       category: "Shelf"
     },
@@ -328,7 +328,7 @@ exports.seed = async function(knex) {
     {
       name: "La Finca Cab Argentina",
       price: "$4.49",
-      category: "Wine"
+      category: "Beverages"
     },
     {
       name: "Organic Red Quinoa",
@@ -493,7 +493,7 @@ exports.seed = async function(knex) {
     {
       name: "4 Hands Brewing Seasonal",
       price: "$9.99",
-      category: "Beer"
+      category: "Beverages"
     },
     {
       name: "Green Jackruit Canned",
@@ -638,6 +638,121 @@ exports.seed = async function(knex) {
     {
       name: "Organic Sweet Potato Bag 3lb",
       price: "$4.49",
+      category: "Produce"
+    },
+    {
+      name: "Multigrain Crackers",
+      price: "$2.29",
+      category: "Snacks"
+    },
+    {
+      name: "Sparkling Watermelon Juice 4 Pack",
+      price: "$3.99",
+      category: "Beverages"
+    },
+    {
+      name: "Lavender Dish Soap",
+      price: "$2.99",
+      category: "Cleaning"
+    },
+    {
+      name: "Coconut Water With Aloe Juice",
+      price: "$2.99",
+      category: "Beverages"
+    },
+    {
+      name: "Canned Whole Kernel Corn",
+      price: "$0.89",
+      category: "Shelf"
+    },
+    {
+      name: "Soyaki Sauce",
+      price: "$3.29",
+      category: "Shelf"
+    },
+    {
+      name: "Soy Sauce Reduced Sodium",
+      price: "$2.99",
+      category: "Shelf"
+    },
+    {
+      name: "Vegan Tikka Masala",
+      price: "$3.69",
+      category: "Frozen"
+    },
+    {
+      name: "Italian Bomba Hot Pepper Sauce",
+      price: "$2.99",
+      category: "Shelf"
+    },
+    {
+      name: "Organic Peanut Butter Crunchy No Salt Added",
+      price: "$3.49",
+      category: "Shelf"
+    },
+    {
+      name: "Palak Paneer",
+      price: "$2.99",
+      category: "Frozen"
+    },
+    {
+      name: "Paneer Tikka Masala",
+      price: "$2.99",
+      category: "Frozen"
+    },
+    {
+      name: "Arugula Pizza With Tomatoes",
+      price: "$3.99",
+      category: "Frozen"
+    },
+    {
+      name: "Organic Vegen Tempeh 3 Grain",
+      price: "$1.99",
+      category: "Deli"
+    },
+    {
+      name: "Pata Raviolo Sweet Corn Basil",
+      price: "$3.69",
+      category: "Deli"
+    },
+    {
+      name: "Raw Walnut Halves & Pieces",
+      price: "$4.99",
+      category: "Snacks"
+    },
+    {
+      name: "Baby Beets Steamed 8 oz",
+      price: "$2.29",
+      category: "Produce"
+    },
+    {
+      name: "Organic Tofu High Protein",
+      price: "$2.49",
+      category: "Deli"
+    },
+    {
+      name: "Shredded Soy 3 Cheese Blend",
+      price: "$3.99",
+      category: "Deli"
+    },
+    {
+      name: "Brussels Sprouts 1lb",
+      price: "$2.49",
+      category: "Produce"
+    },
+    {
+      name: "Vegan Ranch Dip",
+      price: "$3.49",
+      category: "Deli"
+    },
+    {
+      name: "Vegan Italian Sausage Tofurky",
+      price: "$3.49",
+      category: "Deli"
+    },
+    {
+      name: "Organic Yellow Peach",
+      price: "$0.89",
       category: "Produce"
     }
 	])
