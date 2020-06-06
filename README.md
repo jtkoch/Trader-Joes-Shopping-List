@@ -17,7 +17,7 @@
 
 ## API 
 
-#### BASEURL: ```Heroku link here```
+#### BASEURL: ```https://trader-joes-shopping-list.herokuapp.com/```
 
 ## ENDPOINTS
 |    METHOD    |        ROUTE         | RESTRICTED |
@@ -37,7 +37,7 @@
 ## AUTH ROUTES
   ### POST ```/api/auth/register```
     - Returns the newly created user object
-    - Your request body must include a username, password, first_name, last_name, and email address
+    - Your request body must include a username, password, first_name, and last_name
 
   ### POST ```/api/auth/login```
     - Returns the user (if found and valid) along with a JSON Web token
@@ -48,11 +48,8 @@
     - Returns an array of all the users in the database
 
   ### GET ```/api/users/:id```     
-    - Returns username, password, first_name, last_name, and email of the user by ID
+    - Returns username, password, first_name, and last_name
     - The ID should be in the request parameters
-
-  ### GET ```/api/users/:id/posts```
-    - Returns posts of specified user by ID
 
   ### PUT ```/api/users/:id```  
     - Returns an updated user object
@@ -62,22 +59,22 @@
   ### DELETE ```/api/users/:id```  
     - Response of "success": "deleted", and ID of the user that was deleted
 
-## POSTS ROUTES
-  ### GET ```/api/posts```
-    - Returns an array of all the posts in the database    
+## Items ROUTES
+  ### GET ```/api/items```
+    - Returns an array of all the items in the database    
 
-  ### GET ```/api/posts/:id```  
-    - Returns user_id, title, body, and img_url
+  ### GET ```/api/items/:id```  
+    - Returns name, price, category
     - The ID should be in the request parameters
 
-  ### POST ```/api/posts``` 
-    - Creates a new user post to the specified user ID in the request body
-    - Response of "success": "You have successfully created a new post"
+  ### POST ```/api/items``` 
+    - Creates a new item
+    - Response of "success": "You have successfully created a new item"
 
-  ### PUT ```/api/posts/:id```
-    - Returns an updated posts object
+  ### PUT ```/api/items/:id```
+    - Returns an updated items object
     - The ID should be in the request parameters  
-    - Response of "success": "updated", and ID of the post that was updated
+    - Response of "success": "updated", and ID of the item that was updated
 
-  ### DELETE ```/api/posts/:id```
-    - Response of "success": "deleted", and ID of the post that was deleted
+  ### DELETE ```/api/items/:id```
+    - Response of "success": "deleted", and ID of the item that was deleted
