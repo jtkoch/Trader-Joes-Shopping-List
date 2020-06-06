@@ -4,7 +4,7 @@ const cors = require("cors")
 //////////////////// const restricted = require("../auth/restricted.js")
 
 //routers
-//////////////////// const usersRouter = require("../users/users-router.js")
+const usersRouter = require("../users/users-router.js")
 //////////////////// const authRouter = require("../auth/auth-router.js")
 //////////////////// const postsRouter = require("../posts/posts-router.js")
 
@@ -16,7 +16,7 @@ server.use(cors())
 server.use(helmet())
 
 //routes
-//////////////////// server.use("/api/users", logger, restricted, usersRouter)
+server.use("/api/users", logger, usersRouter)
 //////////////////// server.use("/api/auth", logger, authRouter)
 //////////////////// server.use("/api/posts", logger, restricted, postsRouter)
 
