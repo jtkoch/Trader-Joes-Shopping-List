@@ -6,7 +6,7 @@ const cors = require("cors")
 //routers
 const usersRouter = require("../users/users-router.js")
 //////////////////// const authRouter = require("../auth/auth-router.js")
-//////////////////// const postsRouter = require("../posts/posts-router.js")
+const itemsRouter = require("../items/items-router.js")
 
 const server = express()
 
@@ -18,7 +18,7 @@ server.use(helmet())
 //routes
 server.use("/api/users", logger, usersRouter)
 //////////////////// server.use("/api/auth", logger, authRouter)
-//////////////////// server.use("/api/posts", logger, restricted, postsRouter)
+server.use("/api/items", logger, itemsRouter)
 
 server.get("/", (req, res) =>{
     res.status(200).json({message: "Welcome to the Trader Joe's Shopping List API"})
