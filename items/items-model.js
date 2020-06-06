@@ -16,9 +16,9 @@ function findById(id) {
   .first()
 }
 
-async function insert(user) {
+async function insert(item) {
   return await db("items")
-  .insert(user)
+  .insert(item)
   .returning(["id", "name"])
 }
 

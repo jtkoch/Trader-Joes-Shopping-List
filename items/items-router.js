@@ -33,6 +33,22 @@ router.get("/:id", (req, res) => {
     })
 })
 
+// New item
+router.post("/", (req, res) => {
+  let newItem = req.body
+  Items.insert(newItem)
+    .then(newItem => {
+      res.status(200).json({
+        success: "You have successfully created a new item",
+      })
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Failed to add new item",
+      })
+    })
+})
+
 // Update item
 router.put("/:id", (req, res) => {
   const {id} = req.params
