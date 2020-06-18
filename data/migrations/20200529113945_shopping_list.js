@@ -15,17 +15,11 @@ exports.up = async function(knex) {
   })
 
   await knex.schema.createTable("saved_items", (table) => {
-    table.integer("user_id")
-      .references("id")
-      .inTable("users")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE")
-
-    table.integer("items_id")
-      .references("id")
-      .inTable("items")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE")  
+    table.increments("id")
+    table.string("item_id").notNull()
+    table.string("item_name").notNull()
+    table.string("item_price").notNull()
+    table.text("item_category").notNull()
   })
 }
 

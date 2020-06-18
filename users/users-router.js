@@ -103,4 +103,71 @@ router.delete("/:id", (req, res) => {
     })
 })
 
+// save an item
+router.post("/:id/saved", async(req, res, next) => {
+  const id = req.params.id;
+
+  const item = req.body;
+
+  const user = await model.findById(id);
+  if (!user) {
+    return res.status(404).json({
+      message: "The seeker with that ID doesn't exist.",
+    });
+  } else if (!item.item_id || !item.name || !item.price || !item.category) {
+    return res.status(400).json({
+      message: "You must include the item_id, name, price, and category in your request."
+    });
+  };
+
+  try {
+    res.status(201).json(await model.save(id, item))
+  } catch (err) {
+    console.log(err)
+    next(err)
+  };
+});
+
+// get all saved items for a user
+router.get("/:id/saved", async(req, res, next) => {
+  const id = req.params.id;
+
+  const user = await model.findById(id);
+  if (!user) {
+    return res.status(404).json({
+      message: "The seeker with that ID doesn't exist.",
+    });
+  }
+
+  try {
+    res.status(200).json(await model.findSaved(id))
+  } catch (err) {
+    console.log(err)
+    next(err)
+  };
+});
+
+// delete a item from saved
+router.delete("/:id/saved/:item_id", async (req, res, next) => {
+  const id = req.params.id;
+  const item_id = req.params.item_id;
+
+  try {
+    const user = await model.findById(id);
+    if (!user) {
+      return res.status(404).json({
+        message: "The seeker with that ID doesn't exist.",
+      });
+    } else {
+      const deleted = await model.removeSaved(id, item_id)
+      if (deleted.numberOfDeletedRecords === 0) {
+        return res.status(404).json({ message: "Saved item not found." })
+      }
+      res.status(200).json(deleted)
+    }
+  } catch (err) {
+    next(err)
+  }
+})
+
 module.exports = router
