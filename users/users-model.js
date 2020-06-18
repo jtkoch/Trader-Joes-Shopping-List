@@ -34,11 +34,35 @@ function update(changes, id) {
   .update(changes)
 }
 
+async function save(id, item) {
+  await db("saved_items").insert({ 
+    id, 
+    item_id: item.item_id,
+    item_name: item.name,
+    item_price: item.price,
+    item_category: item.category,
+  })
+  return db("saved_items").where({id, item_id: item.item_id})
+}
+
+function findSaved(id) {
+  return db("saved_items").where({ id })
+}
+
+async function removeSaved(id, item_id) {
+  const deleted = await findSavedById(id, item_id)
+    .del()
+  return { numberOfDeletedRecords: deleted }
+}
+
 module.exports = {
   find, 
   findBy, 
   findById, 
   insert, 
   remove, 
-  update
+  update,
+  save,
+  findSaved,
+  removeSaved
 }
