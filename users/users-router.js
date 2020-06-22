@@ -112,7 +112,7 @@ router.post("/:id/saved", async(req, res, next) => {
   const user = await model.findById(id);
   if (!user) {
     return res.status(404).json({
-      message: "The seeker with that ID doesn't exist.",
+      message: "The item with that ID doesn't exist.",
     });
   } else if (!item.item_id || !item.name || !item.price || !item.category) {
     return res.status(400).json({
@@ -135,7 +135,7 @@ router.get("/:id/saved", async(req, res, next) => {
   const user = await model.findById(id);
   if (!user) {
     return res.status(404).json({
-      message: "The seeker with that ID doesn't exist.",
+      message: "The item with that ID doesn't exist.",
     });
   }
 
